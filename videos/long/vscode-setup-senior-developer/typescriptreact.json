@@ -1,0 +1,82 @@
+{
+  "Console Log": {
+    "prefix": "cl",
+    "body": [
+      "console.log($1);"
+    ]
+  },
+  "React useState": {
+    "prefix": "us",
+    "body": [
+      "const [$1, set$2] = useState($3);"
+    ]
+  },
+  "React useEffect": {
+    "prefix": "ue",
+    "body": [
+      "useEffect(() => {",
+      "  $1",
+      "}, [$2]);"
+    ]
+  },
+  "React useCallback": {
+    "prefix": "ucb",
+    "body": [
+      "useCallback(() => {",
+      "  $1",
+      "}, [$2]);"
+    ]
+  },
+  "React useMemo": {
+    "prefix": "umm",
+    "body": [
+      "useMemo(() => {",
+      "  $1",
+      "}, [$2]);"
+    ]
+  },
+  "Async React Function Component": {
+    "prefix": "arjsfc",
+    "body": [
+      "const $1 = async () => {",
+      "  return $2;",
+      "};",
+      "",
+      "export default $1;"
+    ]
+  },
+  "Async React Function Component with Props": {
+    "prefix": "arjsfcp",
+    "body": [
+      "interface $1Props {}",
+      "",
+      "const $1 = async ({}: $1Props) => {",
+      "  return $2;",
+      "};",
+      "",
+      "export default $1;"
+    ]
+  },
+  "React Function Component": {
+    "prefix": "rjsfc",
+    "body": [
+      "const $1 = () => {",
+      "  return $2;",
+      "};",
+      "",
+      "export default $1;"
+    ]
+  },
+  "React Function Component with Props": {
+    "prefix": "rjsfcp",
+    "body": [
+      "interface $1Props {}",
+      "",
+      "const $1 = ({}: $1Props) => {",
+      "  return $2;",
+      "};",
+      "",
+      "export default $1;"
+    ]
+  }
+}
