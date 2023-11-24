@@ -4,10 +4,10 @@ import {
   endOfMonth,
   format,
   getDay,
-  isSameDay,
   isToday,
   startOfMonth,
 } from "date-fns";
+import { useMemo } from "react";
 
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -32,44 +32,60 @@ const EventCalendar = ({ events }: EventCalendarProps) => {
 
   const startingDayIndex = getDay(firstDayOfMonth);
 
+  const eventsByDate = useMemo(() => {
+    return events.reduce((acc: { [key: string]: Event[] }, event) => {
+      const dateKey = format(event.date, "yyyy-MM-dd");
+      if (!acc[dateKey]) {
+        acc[dateKey] = [];
+      }
+      acc[dateKey].push(event);
+      return acc;
+    }, {});
+  }, [events]);
+
   return (
     <div className="container mx-auto p-4">
       <div className="mb-4">
         <h2 className="text-center">{format(currentDate, "MMMM yyyy")}</h2>
       </div>
       <div className="grid grid-cols-7 gap-2">
-        {WEEKDAYS.map((weekday) => {
+        {WEEKDAYS.map((day) => {
           return (
-            <div key={weekday} className="text-center font-bold">
-              {weekday}
+            <div key={day} className="font-bold text-center">
+              {day}
             </div>
           );
         })}
         {Array.from({ length: startingDayIndex }).map((_, index) => {
-          return <div key={`empty-${index}`} className="border rounded-md" />;
+          return (
+            <div
+              key={`empty-${index}`}
+              className="border rounded-md p-2 text-center"
+            />
+          );
         })}
         {daysInMonth.map((day, index) => {
+          const dateKey = format(day, "yyyy-MM-dd");
+          const todaysEvents = eventsByDate[dateKey] || [];
           return (
             <div
               key={index}
-              className={clsx("border rounded-md text-center p-2", {
+              className={clsx("border rounded-md p-2 text-center", {
                 "bg-gray-200": isToday(day),
                 "text-gray-900": isToday(day),
               })}
             >
               {format(day, "d")}
-              {events
-                .filter((event) => isSameDay(event.date, day))
-                .map((event) => {
-                  return (
-                    <div
-                      key={event.title}
-                      className="text-sm bg-green-500 rounded-md"
-                    >
-                      {event.title}
-                    </div>
-                  );
-                })}
+              {todaysEvents.map((event) => {
+                return (
+                  <div
+                    key={event.title}
+                    className="bg-green-500 rounded-md text-gray-900"
+                  >
+                    {event.title}
+                  </div>
+                );
+              })}
             </div>
           );
         })}
