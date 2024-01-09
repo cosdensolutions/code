@@ -8,8 +8,8 @@ You should know and be comfortable with **all of the following:**
 
 - **JSX**
   - [How to write JSX](https://react.dev/learn/writing-markup-with-jsx)
-  - How to conditionally render elements
-  - How to loop over items
+  - [How to conditionally render elements](https://react.dev/learn/conditional-rendering)
+  - [How to loop over items](https://react.dev/learn/rendering-lists)
   - [Adding Javascript in JSX](https://react.dev/learn/javascript-in-jsx-with-curly-braces)
 - **Components**
   - [How to create components](https://react.dev/learn/your-first-component)
@@ -21,11 +21,11 @@ You should know and be comfortable with **all of the following:**
     - How to split larger components into smaller ones ([example 1](https://youtu.be/PisA-OPisUY), [example 2](https://youtube.com/shorts/OwXQd6YOySg))
 - **Props**
   - [How to pass data through props](https://react.dev/learn/passing-props-to-a-component)
-  - How components re-render when props change
+  - How components re-render when props change (component lifecycle)
   - [Prop drilling and why to avoid it](https://dev.to/codeofrelevancy/what-is-prop-drilling-in-react-3kol)
 - **Events**
   - [How to react to inputs](https://react.dev/learn/reacting-to-input-with-state)
-  - [Understanding React events (buttons, inputs)](https://www.knowledgehut.com/blog/web-development/handling-react-events-guide)
+  - [Understanding React events (buttons, inputs, forms)](https://www.knowledgehut.com/blog/web-development/handling-react-events-guide)
 
 ## 2. Working With Hooks
 
@@ -33,7 +33,7 @@ You should know and have worked with **all of the following hooks:**
 
 - [**useState**](https://youtu.be/V9i3cGD-mts)
   - How to create and update state
-  - How state updates trigger re-renders
+  - How state updates trigger re-renders (component lifecycle)
   - [Setting state using updater functions](https://react.dev/reference/react/useState#updating-state-based-on-the-previous-state)
 - [**useEffect**](https://youtu.be/-4XpG5_Lj_o)
   - Understanding the `useEffect` lifecycle (mount, update, cleanup)
@@ -56,6 +56,9 @@ You should know and have worked with **all of the following hooks:**
   - [How to create a context through `createContext`](https://react.dev/reference/react/useContext#passing-data-deeply-into-the-tree)
   - How to create a provider component
   - How to access context through `useContext`
+- **Custom Hooks**
+  - How to create a custom hook
+  - How to re-use a custom hook
 
 ## 3. Implementing Features
 
@@ -75,11 +78,13 @@ You should be able to implement **some of the following features:**
   - [Using React Hook Form](https://react-hook-form.com/)
   - [Using Formik](https://formik.org/docs/overview)
 - **State Management**
-  - [Using Redux with Redux Toolkit](https://redux-toolkit.js.org/)
+  - [Using Redux / Toolkit](https://redux-toolkit.js.org/)
   - [Using Zustand](https://github.com/pmndrs/zustand)
   - [Using Jotai](https://jotai.org/)
+  - [Using Recoil](https://recoiljs.org/)
+  - [Using MobX](https://mobx.js.org/README.html)
 - **Authentication**
-  - How to handle user sign in
+  - How to handle user sign in (email, password, JWT)
   - How to handle access tokens and token refreshes
   - Social sign in (Google, Facebook, GitHub, etc.)
   - [Using Supabase](https://supabase.com/)
@@ -87,11 +92,14 @@ You should be able to implement **some of the following features:**
   - [Using Clerk](https://clerk.com/)
 - [**Accessibility**](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_accessibility)
   - Understanding why accessibility is important
-  - Using semantic HTML
+  - [Using semantic HTML](https://www.semrush.com/blog/semantic-html5-guide/)
   - How to implement keyboard navigation
   - How to add aria labels
   - [Using React Aria](https://react-spectrum.adobe.com/react-aria/)
 - **Testing**
+  - [How to implement unit tests](https://www.freecodecamp.org/news/how-to-write-unit-tests-in-react/)
+    - [Using React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+    - [Using Jest](https://jestjs.io/)
   - [How to implement e2e integration tests](https://youtu.be/6BkcHAEWeTU)
     - [Using Cypress](https://www.cypress.io/)
     - [Using Playwright](https://playwright.dev/)
@@ -115,6 +123,7 @@ You should have worked with **one of the following:**
   - How to run a simple React application
 - [**Next.js**](https://nextjs.org/)
   - [Understanding file-based routing](https://nextjs.org/docs/app/building-your-application/routing)
+  - [Understanding Next Auth](https://next-auth.js.org/)
   - [Understanding server components](https://nextjs.org/docs/app/building-your-application/rendering/server-components)
   - [Understanding server actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)
 - [**Remix**](https://remix.run/)
