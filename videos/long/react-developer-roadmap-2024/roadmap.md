@@ -83,6 +83,7 @@ You should be able to implement **some of the following features:**
   - [Using Jotai](https://jotai.org/)
   - [Using Recoil](https://recoiljs.org/)
   - [Using MobX](https://mobx.js.org/README.html)
+  - [Using Signals](https://medium.com/comsystoreply/unlocking-communication-in-react-a-journey-into-the-power-of-signals-f013d3a1ad7d)
 - **Authentication**
   - How to handle user sign in (email, password, JWT)
   - How to handle access tokens and token refreshes
