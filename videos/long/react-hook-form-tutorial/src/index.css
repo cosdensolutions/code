@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-background-800 text-white;
+}
+
+button,
+button[type="submit"] {
+  @apply rounded-md bg-gradient-to-r from-primary-500 to-secondary-600 px-6 py-2 text-black hover:opacity-50;
+}
+
+button:disabled,
+button[type="submit"]:disabled {
+  @apply opacity-50;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  @apply rounded-md border border-background-700 bg-background-700 px-2 py-1 text-white shadow-lg outline-none  focus:border-primary-500;
+}
+
+.tutorial {
+  @apply flex flex-col px-4 py-2;
+}
+
+.tutorial-shorts {
+  @apply flex flex-col px-8 py-4;
+}
