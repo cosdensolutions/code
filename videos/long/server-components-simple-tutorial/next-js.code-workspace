@@ -1,0 +1,38 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"git.enabled": false,
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+		  "source.fixAll.eslint": "explicit"
+		},
+		"eslint.validate": ["typescript"],
+		"editor.guides.indentation": false,
+		"[css]": {
+		  "editor.tabSize": 2,
+		  "editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[json]": {
+		  "editor.tabSize": 2,
+		  "editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[typescriptreact]": {
+		  "editor.tabSize": 2,
+		  "editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[typescript]": {
+		  "editor.tabSize": 2,
+		  "editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		// Used for allowing intellisense to import based on `tsconfig.json`
+		//   "typescript.preferences.importModuleSpecifier": "non-relative",
+		"workbench.colorTheme": "Material Theme Darker",
+		"editor.inlineSuggest.enabled": true,
+		"window.zoomLevel": 5,
+		"typescript.tsdk": "node_modules/typescript/lib"
+	  }
+}
