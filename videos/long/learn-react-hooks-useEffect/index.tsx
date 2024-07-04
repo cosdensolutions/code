@@ -9,7 +9,7 @@ export default function Demo({}: DemoProps) {
     // The code that we want to run
     console.log('The count is:', count);
 
-    // Optional return function
+    // Optional return functio
     return () => {
       console.log('I am being cleaned up!');
     };
