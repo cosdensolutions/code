@@ -33,7 +33,7 @@ function App() {
       key: 'role',
       header: 'Role',
       render: (value) => (
-        <span className="rounded-full bg-gray-100 px-2 py-1 text-sm">
+        <span className="rounded-full bg-gray-100 text-black px-2 py-1 text-sm">
           {value}
         </span>
       ),
