@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import { useOnboardingStore } from "@/app/onboarding/store";
+import { useEffect } from "react";
 
 const onboardingNameSchema = onboardingSchema.pick({
   firstName: true,
@@ -45,6 +46,15 @@ export default function OnboardingNameForm() {
     setData(data);
     router.push("/onboarding/password");
   };
+
+  useEffect(() => {
+    if (firstNameFromStore || lastNameFromStore) {
+      form.reset({
+        firstName: firstNameFromStore,
+        lastName: lastNameFromStore,
+      });
+    }
+  }, [firstNameFromStore, lastNameFromStore, form]);
 
   return (
     <Form {...form}>

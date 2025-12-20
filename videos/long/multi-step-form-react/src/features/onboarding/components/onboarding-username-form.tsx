@@ -46,6 +46,10 @@ export default function OnboardingUsernameForm() {
     },
   });
 
+  const handleBack = () => {
+    router.push("/onboarding/password");
+  };
+
   const onSubmit = (data: OnboardingUsernameSchema) => {
     setData(data);
     console.log({
@@ -110,7 +114,12 @@ export default function OnboardingUsernameForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Next</Button>
+        <div className="flex gap-2">
+          <Button type="button" onClick={handleBack}>
+            Back
+          </Button>
+          <Button type="submit">Next</Button>
+        </div>
       </form>
     </Form>
   );
