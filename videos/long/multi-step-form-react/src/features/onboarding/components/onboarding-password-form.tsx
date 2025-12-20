@@ -31,16 +31,22 @@ export default function OnboardingPasswordForm() {
 
   const firstName = useOnboardingStore((state) => state.firstName);
   const lastName = useOnboardingStore((state) => state.lastName);
+  const passwordFromStore = useOnboardingStore((state) => state.password) ?? ''
+  const repeatPasswordFromStore = useOnboardingStore((state) => state.repeatPassword) ?? ''
 
   const setData = useOnboardingStore((state) => state.setData);
 
   const form = useForm<OnboardingPasswordSchema>({
     resolver: zodResolver(onboardingPasswordSchema),
     defaultValues: {
-      password: "",
-      repeatPassword: "",
+      password: passwordFromStore,
+      repeatPassword: repeatPasswordFromStore,
     },
   });
+
+  const handleBack = () => {
+    router.back();
+  };
 
   const onSubmit = (data: OnboardingPasswordSchema) => {
     setData(data);
@@ -93,6 +99,7 @@ export default function OnboardingPasswordForm() {
         />
         <Button type="submit">Next</Button>
       </form>
+        <Button onClick={handleBack}>Back</Button>
     </Form>
   );
 }

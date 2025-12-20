@@ -29,12 +29,15 @@ export default function OnboardingNameForm() {
   const router = useRouter();
 
   const setData = useOnboardingStore((state) => state.setData);
+  const firstNameFromStore =
+    useOnboardingStore((state) => state.firstName) ?? "";
+  const lastNameFromStore = useOnboardingStore((state) => state.lastName) ?? "";
 
   const form = useForm<OnboardingNameSchema>({
     resolver: zodResolver(onboardingNameSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
+      firstName: firstNameFromStore,
+      lastName: lastNameFromStore,
     },
   });
 

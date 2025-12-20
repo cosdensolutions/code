@@ -34,16 +34,20 @@ export default function OnboardingUsernameForm() {
   const lastName = useOnboardingStore((state) => state.lastName);
   const password = useOnboardingStore((state) => state.password);
   const repeatPassword = useOnboardingStore((state) => state.repeatPassword);
+  const userNameFromStore = useOnboardingStore((state) => state.username) ?? "";
+  const termsFromStore = useOnboardingStore((state) => state.terms) ?? false;
+  const setData = useOnboardingStore((state) => state.setData);
 
   const form = useForm<OnboardingUsernameSchema>({
     resolver: zodResolver(onboardingUsernameSchema),
     defaultValues: {
-      username: "",
-      terms: false,
+      username: userNameFromStore,
+      terms: termsFromStore,
     },
   });
 
   const onSubmit = (data: OnboardingUsernameSchema) => {
+    setData(data);
     console.log({
       ...data,
       firstName,
